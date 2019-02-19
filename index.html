@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <title>网易云音乐</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        @keyframes circle{
-            0% {
-                transform: rotate(0deg)
-            }
-            100% {
-                transform: rotate(360deg)
-            }
-        }
-        h1,h1,h3{
-            font-size: 0;
-            font-weight: 500;
-        }
-        .page{
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            background: transparent url("https://p4.music.126.net/BIdVrpA-fhdCqzth5JlvUQ==/109951163862943341.jpg") no-repeat center;
-            background-size: cover;
-            opacity: 1;
-            position: relative;
-        }
-        /* 背景蒙版待完成
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://at.alicdn.com/t/font_1051071_vixwr28urmn.js"></script>
+		<title>网易云音乐</title>
+		<style type="text/css">
+			.icon {
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			@keyframes circle {
+				0% {
+					transform: rotate(0deg)
+				}
+				100% {
+					transform: rotate(360deg)
+				}
+			}
+			
+			h1,
+			h1,
+			h3 {
+				font-size: 0;
+				font-weight: 500;
+			}
+			
+			.page {
+				display: flex;
+				flex-direction: column;
+				height: 100vh;
+				background: transparent url("https://p4.music.126.net/BIdVrpA-fhdCqzth5JlvUQ==/109951163862943341.jpg") no-repeat center;
+				background-size: cover;
+				opacity: 1;
+				position: relative;
+			}
+			/* 背景蒙版待完成
         .page::after{
             content: " ";
             position: absolute;
@@ -45,81 +61,123 @@
             width: 100vw;
             opacity: 1;
         } */
-        .disc-container{
-            position: relative;
-            padding-top: 8vh;
-        }
+			
+			.disc-container {
+				position: relative;
+				padding-top: 8vh;
+			}
+			.disc-container .icon{
+				fill: #000;
+				width: 25vw;
+				height: 25vh;
+				position: absolute;
+				top: 15vh;
+				left: 50%;
+				margin-left: -12.5vw;
+				opacity: .5;
+				z-index: 5;
+			}
+			.disc-container .icon-play{
+				display: block;
+			}
+			.disc-container .icon-pause{
+				display: none;
+			}
+			.disc-container.playing .icon-play{
+				display: none;
+			}
+			.disc-container.playing .icon-pause{
+				display: block;
+			}
+			.disc-container .pointer {
+				width: 24vw;
+				position: absolute;
+				left: 50%;
+				z-index: 4;
+				top: 0;
+			}
+			
+			.disc-container .disc {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.disc-container .ring {
+				width: 72vw;
+				z-index: 2;
+			}
+			
+			.disc-container .light {
+				width: 72vw;
+				position: absolute;
+				z-index: 3;
+				animation: circle 20s infinite linear;
+			}
+			
+			.disc-container .cover {
+				width: 45vw;
+				position: absolute;
+				z-index: 1;
+				border-radius: 50%;
+				display: block;
+				animation: circle 20s infinite linear;
+			}
+			
+			.song-lyric {
+				padding-top: 5vh;
+				text-align: center;
+				color: #fefefe;
+			}
+			
+			.song-lyric h1 {
+				font-size: 18px;
+				white-space: nowrap;
+				line-height: 1.1;
+				padding-bottom: 12px;
+			}
+			
+			.song-lyric p {
+				font-size: 16px;
+				line-height: 1.5em;
+			}
+			
+			.lyric-body {
+				height: 72px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
 
-        .disc-container .pointer{
-            width: 24vw;
-            position: absolute;
-            left: 50%;
-            z-index: 4;
-            top: 0;
-        }
-        .disc-container .disc{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .disc-container .ring{
-            width: 72vw;
-            z-index: 2;
-        }
-        .disc-container .light{
-            width: 72vw;
-            position: absolute;
-            z-index: 3;
-            animation: circle 20s infinite linear;
-        }
-        .disc-container .cover{
-            width: 45vw;
-            position: absolute;
-            z-index: 1;
-            border-radius: 50%;
-            display: block;
-            animation: circle 20s infinite linear;
-        }
-        .song-lyric{
-            padding-top: 5vh;
-            text-align: center;
-            color: #fefefe;
-        }
-        .song-lyric h1{
-            font-size: 18px;
-            white-space: nowrap;
-            line-height: 1.1;
-            padding-bottom: 12px;
-        }
-        .song-lyric p{
-        	font-size: 16px;
-            line-height: 1.5em;
-        }
-        .lyric-body{
-        	height: 72px;
-        	overflow: hidden;
-        }
-    </style>
-</head>
-<body>
-    <div class="page">
-        <div class="disc-container">
-            <img class="pointer" src="https://s3.music.126.net/m/s/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862" alt="pointer">
-            <div class="disc">
-                <img src="https://s3.music.126.net/m/s/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48" alt="ring" class="ring">
-                <img src="https://s3.music.126.net/m/s/img/disc_light-ip6.png?996fc8a2bc62e1ab3f51f135fc459577" alt="light" class="light">
-                <img src="http://p2.music.126.net/robvdO-lFcXytF8PtufYZg==/109951163825801884.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0" alt="cover" class="cover">
-            </div>
-        </div>
-        <div class="song-lyric">
-            <h1>火星情报局</h1>
-            <div class="lyric-body">
-            	<div class="scroll-lyric">
-            		
-            	</div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="song.js"></script>
-</body>
+	<body>
+		<div class="page">
+			<div class="disc-container">
+				<svg class="icon icon-play">
+					<use xlink:href="#icon-play"></use>
+				</svg>
+				<svg class="icon icon-pause">
+					<use xlink:href="#icon-pause"></use>
+				</svg>
+				<img class="pointer" src="https://s3.music.126.net/m/s/img/needle-ip6.png?be4ebbeb6befadfcae75ce174e7db862" alt="pointer">
+				<div class="disc">
+					<img src="https://s3.music.126.net/m/s/img/disc-ip6.png?69796123ad7cfe95781ea38aac8f2d48" alt="ring" class="ring">
+					<img src="https://s3.music.126.net/m/s/img/disc_light-ip6.png?996fc8a2bc62e1ab3f51f135fc459577" alt="light" class="light">
+					<img src="http://p2.music.126.net/robvdO-lFcXytF8PtufYZg==/109951163825801884.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0" alt="cover" class="cover">
+				</div>
+			</div>
+			<div class="song-lyric">
+				<h1>火星情报局</h1>
+				<div class="lyric-body">
+					<div class="scroll-lyric">
+
+					</div>
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+		<script type="text/javascript" src="song.js"></script>
+	</body>
+
 </html>
