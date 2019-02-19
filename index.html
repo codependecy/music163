@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <title>网易云音乐</title>
     <style>
         *{
@@ -46,14 +47,13 @@
         } */
         .disc-container{
             position: relative;
-            padding-top: 12vh;
+            padding-top: 8vh;
         }
 
         .disc-container .pointer{
             width: 24vw;
             position: absolute;
             left: 50%;
-            margin-left: -12vw;
             z-index: 4;
             top: 0;
         }
@@ -83,15 +83,21 @@
         .song-lyric{
             padding-top: 5vh;
             text-align: center;
-            font-size: 16px;
             color: #fefefe;
-            line-height: 1.2;
         }
         .song-lyric h1{
             font-size: 18px;
             white-space: nowrap;
             line-height: 1.1;
             padding-bottom: 12px;
+        }
+        .song-lyric p{
+        	font-size: 16px;
+            line-height: 1.5em;
+        }
+        .lyric-body{
+        	height: 72px;
+        	overflow: hidden;
         }
     </style>
 </head>
@@ -107,17 +113,13 @@
         </div>
         <div class="song-lyric">
             <h1>火星情报局</h1>
-            <p>有个秘密组织</p>
-            <p>提案者对抗嘉宾们</p>
-            <p>却不知它早已深入</p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+            <div class="lyric-body">
+            	<div class="scroll-lyric">
+            		
+            	</div>
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="song.js"></script>
 </body>
 </html>
