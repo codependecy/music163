@@ -1,0 +1,166 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+h1,h2,h3{
+	font-weight: 500;
+}
+header{
+	background-color: #d43c33;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+	height: 64px;
+}
+header svg{
+	width: 142px;
+	height: 25px;
+}
+
+header .headapp{
+	color: #fff;
+	border: 1px solid #FFFFFF;
+	border-radius: 30px;
+	padding: 0 10px;
+	line-height: 28px;
+	display: inline-block;
+}
+
+.newNav{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+	height: 40px;
+}
+.newNav>a{
+	font-size: 0.95em;
+	display: block;
+	flex: 1;
+	text-align: center;
+	line-height: 40px;
+}
+.newNav>a span{
+	position: relative;
+}
+.newNav>a span:after{
+	content: "";
+	position: absolute;
+	left: -10%;
+	bottom: -10px;
+	width: 120%;
+	height: 2px;
+	background: transparent;
+}
+.newNav>a.active span{
+	color: #d33a31;
+}
+.newNav>a.active span:after{
+	background: #d33a31;
+}
+
+section>h1{
+	font-size: 17px;
+	position: relative;
+	padding-left: 9px;
+	line-height: 20px;
+	margin-bottom: 17px;
+}
+section>h1:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -8px;
+	width: 2px;
+	height: 16px;
+	background: #d33a31;
+}
+.recommend{
+	padding-top: 20px;
+}
+.recommend-body{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 24px;
+}
+.recommend-body>a{
+	display: block;
+	width: 32.8%;
+	padding-bottom: 16px;
+}
+.recommend-body>a img{
+	width: 100%;
+}
+.recommend-body>a span{
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	padding: 6px 2px 0 6px;
+	line-height: 1.2;
+	font-size: 13px;
+}
+
+.newMusic{
+	
+}
+.new-music>a{
+	padding-left: 10px;
+	display: flex;
+	position: relative;
+}
+.new-music>a>div{
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+}
+.new-music .music-body{
+	width: 90%;
+}
+.new-music .music-body h3{
+	font-size: 17px;
+}
+.new-music .music-body p{
+	color: #888;
+	line-height: 18px;
+}
+.new-music .music-body p .icon{
+	width: 16px;
+	height: 16px;
+	fill: #d33a31;
+}
+.new-music .music-body p span{
+	font-size: 12px;
+	vertical-align: top;
+}
+.new-music .music-play{
+	width: 10%;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 3px;
+}
+.new-music .music-play svg{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+}
+.new-music>a:after{
+	content: "";
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
