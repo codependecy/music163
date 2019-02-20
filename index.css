@@ -119,7 +119,6 @@ section>h1:after{
 .new-music>a{
 	padding-left: 10px;
 	display: flex;
-	position: relative;
 }
 .new-music>a>div{
 	display: flex;
@@ -128,6 +127,7 @@ section>h1:after{
 }
 .new-music .music-body{
 	width: 90%;
+	padding: 6px 0;
 }
 .new-music .music-body h3{
 	font-size: 17px;
@@ -144,23 +144,65 @@ section>h1:after{
 .new-music .music-body p span{
 	font-size: 12px;
 	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: normal;
 }
 .new-music .music-play{
 	width: 10%;
 	height: 40px;
 	line-height: 40px;
-	padding-top: 3px;
+	padding-top: 10px;
 }
 .new-music .music-play svg{
 	display: inline-block;
 	width: 24px;
 	height: 24px;
 }
-.new-music>a:after{
+.new-music>a>div{
+	position: relative;
+}
+.new-music>a>div:after{
 	content: "";
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+footer{
+	background: url(https://s3.music.126.net/m/s/img/recommand_bg_2x.png?d045fafc60e017b653f8065a87496922) no-repeat;
+	background-size: cover;
+	margin-top: 4px;
+	position: relative;
+	padding-bottom: 7%;
+}
+
+
+.foot-logo{
+	padding-top: 16.9%;
+}
+.foot-logo svg{
+	width: 230px;
+	height: 44px;
+	margin: 0 auto;
+	display: block;
+}
+.openapp{
+	line-height: 38px;
+	border: 1px solid #D33A31;
+	border-radius: 38px;
+	font-size: 16px;
+	color: #D33A31;
+	margin: 15px 37px 5px;
+	text-align: center;
+}
+.copyright{
+	color: #888888;
+	font-size: 12px;
+	line-height: 16px;
+	transform: scale(.75);
+	text-align: center;
 }
