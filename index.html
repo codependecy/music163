@@ -5,7 +5,9 @@
 		<title>网易云音乐</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://at.alicdn.com/t/font_1051071_r8p5lluodcq.js"></script>
+		<script type="text/javascript" src="index.js"></script>
 		<style type="text/css">
 			.icon {
 				vertical-align: -0.15em;
@@ -55,188 +57,7 @@
 		</section>
 		<section class="newMusic">
 			<h1>最新音乐</h1>
-			<div class="new-music">
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>365</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Zedd / Katy Perry</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Please Me</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Cardi B / Bruno Mars</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>火星情报局 (Live)</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>赖煜哲 / 杨桐 (Toarey Yang) / 田书臣 / 黄钧泽</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div>
-						<div class="music-body">
-							<h3>Dumb Blonde</h3>
-							<p>
-								<svg class="icon">
-									<use xlink:href="#icon-sq"></use>
-								</svg>
-								<span>Avril Lavigne / Nicki Minaj</span>
-							</p>
-						</div>
-						<div class="music-play">
-							<svg class="icon">
-								<use xlink:href="#icon-music-play"></use>
-							</svg>
-						</div>
-					</div>
-				</a>
-			</div>
+			<div class="new-music" id="new-music"></div>
 		</section>
 		<footer>
 			<div class="foot-logo">
@@ -247,5 +68,6 @@
 			</div>
 			<p class="copyright">网易公司版权所有©1997-2018   杭州乐读科技有限公司运营</p>
 		</footer>
+		
 	</body>
 </html>
