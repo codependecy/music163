@@ -88,6 +88,7 @@
 			.disc-container.playing .icon-pause{
 				display: block;
 			}
+			
 			.disc-container .pointer {
 				width: 24vw;
 				position: absolute;
@@ -112,6 +113,7 @@
 				position: absolute;
 				z-index: 3;
 				animation: circle 20s infinite linear;
+				animation-play-state: paused;
 			}
 			
 			.disc-container .cover {
@@ -121,7 +123,14 @@
 				border-radius: 50%;
 				display: block;
 				animation: circle 20s infinite linear;
+				animation-play-state: paused;
 			}
+			
+			.disc-container.playing .light,.disc-container.playing .cover{
+				animation-play-state: running;
+			}
+			
+			
 			
 			.song-lyric {
 				padding-top: 5vh;
