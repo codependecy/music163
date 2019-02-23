@@ -31,7 +31,43 @@ $(function() {
 			audio.play()
 			$('.disc-container').addClass('playing')
 		})
+		
+		//	歌词滚动效果
+		//	获取当前播放进度(时间)
+		//	然后根据data-time 来和时间进行比对
+		//	只要播放进度超过了data-time,就进行位移
+	
+		var time = setInterval(function(){
+			let seconds = audio.currentTime
+			let minutes = ~~(seconds/60)
+			let left = seconds - minutes*60
+			let times = `${pad(minutes)}:${pad(left)}`
+			
+			let $whichLine
+			let $p = $('.scroll-lyric > p')
+			for (let i = 0;i<$p.length;i++) {
+				let currentLineTime = $p.eq(i).attr('data-time')
+				let nextLineTime = $p.eq(i+1).attr('data-time')
+				if($p.eq(i+1).length !==0 && currentLineTime < times && nextLineTime > times){
+					$whichLine = $p.eq(i)
+					break
+				}
+			}
+			
+			if($whichLine){
+				let top = $whichLine.offset().top
+				let LinesTop = $('.scroll-lyric').offset().top
+				let delta = top - LinesTop - $('.lyric-body').height()/3
+				$('.scroll-lyric').css('transform',`translateY(-${delta}px)`)
+			}
+		},300)
 	}
+	
+	function pad(number){
+		return number>= 10 ? number + '' : '0' + number
+	}
+	
+	
 	
 	function parseLyric(lyric){
 		let array = lyric.split('\n')
@@ -64,6 +100,8 @@ $(function() {
 //		}
 //	})
 	
+	
+
 	
 	
 	
