@@ -12,7 +12,7 @@ $(function() {
 										<svg class="icon">
 											<use xlink:href="#icon-sq"></use>
 										</svg>
-										<span>Avril Lavigne / Nicki Minaj</span>
+										<span>${i.singer}</span>
 									</p>
 								</div>
 								<div class="music-play">
@@ -26,6 +26,16 @@ $(function() {
 			$('.new-music').append($li)
 		})
 	})
+	$('.newNav>a').on('click',function(e){
+		let $li = $(e.currentTarget).addClass('active')
+		$li.siblings().removeClass('active')
+		let index = $li.index()
+		$('.tabItems>li').eq(index).addClass('active')
+		.siblings().removeClass('active')
+	})
+	
+	
+	
 })
 
 		//		items.forEach((i)=>{

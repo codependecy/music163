@@ -69,6 +69,14 @@ header .headapp{
 	background: #d33a31;
 }
 
+/*.tabItems li{
+	display: none;
+}
+.tabItems li.active{
+	display: block;
+}*/
+
+
 section>h1{
 	font-size: 17px;
 	position: relative;
