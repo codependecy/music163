@@ -69,12 +69,12 @@ header .headapp{
 	background: #d33a31;
 }
 
-/*.tabItems li{
+.tabItems li{
 	display: none;
 }
 .tabItems li.active{
 	display: block;
-}*/
+}
 
 
 section>h1{
