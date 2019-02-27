@@ -341,3 +341,31 @@ footer{
 	background: transparent;
 	pointer-events: none;
 }
+
+.searchIcon{
+	display: block;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	left: 0;
+	top: 9px;
+	margin: 0 8px;
+	vertical-align: middle;
+	font-size: 0;
+}
+.search svg{
+	width: 13px;
+	height: 13px;
+}
+
+.close{
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	right: 0;
+	top: 9px;
+	margin: 0 8px;
+	vertical-align: middle;
+	font-size: 0;
+	
+}
