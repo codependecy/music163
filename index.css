@@ -214,3 +214,130 @@ footer{
 	transform: scale(.75);
 	text-align: center;
 }
+
+
+
+#hottop{
+	background: url(hot_music_bg_2x.jpg) no-repeat;
+	background-size: contain;
+	padding-left: 20px;
+	padding-top: 25px;
+	padding-bottom: 30px;
+}
+
+#hottop .hot-bg{
+	width: 142px;
+	height: 67px;
+	background: url(index_icon_2x.png) no-repeat;
+	background-position: -24px -30px;
+	background-size: 166px 97px;
+}
+
+#hottop .updata-time{
+	margin-top: 10px;
+	color: hsla(0,0%,100%,.8);
+	font-size: 12px;
+	transform: scale(.91);
+	transform-origin: left top;
+}
+
+
+#hot-list .ranking{
+	color: #df3436;
+	width: 28px;
+	font-size: 17px;
+	align-items: center;
+}
+#hot-list .hotMusic{
+	flex: 1 1 auto;
+}
+
+#hot-list>a{
+	padding-left: 10px;
+	display: flex;
+}
+#hot-list>a>div{
+	display: flex;
+	justify-content: flex-start;
+}
+#hot-list .music-body{
+	width: 90%;
+	padding: 6px 0;
+}
+#hot-list .music-body h3{
+	font-size: 17px;
+}
+#hot-list .music-body p{
+	color: #888;
+	line-height: 18px;
+}
+#hot-list .music-body p .icon{
+	width: 16px;
+	height: 16px;
+	fill: #d33a31;
+}
+#hot-list .music-body p span{
+	font-size: 12px;
+	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: normal;
+}
+#hot-list .music-play{
+	width: 10%;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 10px;
+}
+#hot-list .music-play svg{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+}
+#hot-list>a>div{
+	position: relative;
+}
+#hot-list .hotMusic:after{
+	content: "";
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.search-box{
+	display: block;height: 60px;
+	border-bottom: 1px solid #eeeff0;
+	padding-top: 15px;
+}
+
+.search{
+	width: 95%;
+	height: 30px;
+	background: #ebecec;
+	border-radius: 25px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.search #searchSong{
+	outline: none;
+	border: 0px;
+	height: 30px;
+	line-height: 18px;
+	background: transparent;
+	color: #333;
+	font-size: 14px;
+	margin-left: 30px;
+}
+.search .holder{
+	position: absolute;
+	left: 30px;
+	top: 5px;
+	font-size: 14px;
+	color: #c9c9c9;
+	background: transparent;
+	pointer-events: none;
+}

@@ -1,6 +1,5 @@
 $(function() {
 	$.get('./song.json').then(function(response){
-		console.log(response)
 		let items = response
 		items.forEach((i)=>{
 			let $li = $(`
@@ -43,8 +42,33 @@ $(function() {
 		if(index === 1){
 			$.get('./page2.json').then((response)=>{
 				console.log(response)
-				$li.text(response.content)
+				let items = response
+				items.forEach((i)=>{
+					let $a = $(`
+						<a href="./song.html?id=${i.id}">
+							<div class="ranking">0${i.id}</div>
+							<div class="hotMusic">
+								<div class="music-body">
+									<h3>${i.name}</h3>
+									<p>
+										<svg class="icon">
+											<use xlink:href="#icon-sq"></use>
+										</svg>
+										<span>${i.singer}</span>
+									</p>
+								</div>
+								<div class="music-play">
+									<svg class="icon">
+										<use xlink:href="#icon-music-play"></use>
+									</svg>
+								</div>
+							</div>
+						</a>
+					`)
+				$('#hot-list').append($a)
+				
 				$li.attr('data-dowloaded','yes')
+				})
 			})
 		}
 		else if(index === 2){
@@ -58,6 +82,7 @@ $(function() {
 	
 	let timer = undefined
 	$('input#searchSong').on('input',function(e){
+		$('.holder').text('')
 		let $input = $(e.currentTarget)
 		let value = $input.val().trim()
 		if(value === ''){return}
