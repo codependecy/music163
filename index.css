@@ -69,10 +69,10 @@ header .headapp{
 	background: #d33a31;
 }
 
-.tabItems li{
+.tabItems>li{
 	display: none;
 }
-.tabItems li.active{
+.tabItems>li.active{
 	display: block;
 }
 
@@ -368,4 +368,101 @@ footer{
 	vertical-align: middle;
 	font-size: 0;
 	
+}
+
+#default .hotSearch{
+	padding: 15px 10px 0;
+}
+#default .hotSearch h3{
+	font-size: 12px;
+	line-height: 12px;
+	color: #666;
+}
+#default .hotSearch ul{
+	margin: 10px 0 7px;
+}
+#default .hotSearch li{
+	display: inline-block;
+	line-height: 32px;
+	height: 32px;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	padding: 0 14px;
+	border: 1px solid rgba(0,0,0,.1);
+	border-color: #d3d4da;
+	border-radius: 32px;
+	font-size: 14px;
+}
+#default .hotSearch li a{
+	color: #333;
+	font-size: 14px;
+	line-height: 32px;
+}
+
+
+
+
+
+
+.history>ul>li .ranking{
+	color: #df3436;
+	width: 28px;
+	font-size: 17px;
+	align-items: center;
+}
+
+.history>ul>li .hotMusic{
+	flex: 1 1 auto;
+}
+
+.history>ul>li>a{
+	padding-left: 10px;
+	display: flex;
+}
+.history>ul>li>a>div{
+	display: flex;
+	justify-content: flex-start;
+}
+.history>ul>li .music-body{
+	width: 90%;
+	padding: 6px 0;
+}
+.history>ul>li .music-body p{
+	color: #888;
+	line-height: 40px;
+}
+.history>ul>li .music-body p span{
+	font-size: 15px;
+	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: normal;
+	color: #333;
+}
+.history>ul>li .music-play{
+	width: 10%;
+	height: 40px;
+	line-height: 40px;
+	padding-top: 5px;
+}
+.history>ul>li svg{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+.history>ul>li .music-play svg{
+	width: 14px;
+	height: 14px;
+}
+.history>ul>li>a>div{
+	position: relative;
+}
+.history>ul>li .hotMusic:after{
+	content: "";
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
 }
