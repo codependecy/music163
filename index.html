@@ -53,7 +53,7 @@
 			<a><span>搜索</span></a>
 		</nav>
 		<ol class="tabItems">
-			<li>
+			<li class="active">
 				<section class="recommend">
 					<h1>推荐歌单</h1>
 					<div class="recommend-body">
@@ -135,7 +135,7 @@
 				</div>
 				<div id="hot-list"></div>
 			</li>
-			<li class="active">
+			<li>
 				<form action="#" method="get" class="search-box">
 					<div class="search">
 						<i class="searchIcon">
@@ -145,14 +145,14 @@
 						</i>
 						<input type="text" name="" id="searchSong" value="" placeholder />
 						<label for="searchSong" class="holder">搜索歌曲、歌手、专辑</label>
-						<i class="close">
+						<i class="close" id="closeIcon">
 							<svg class="icon" aria-hidden="true">
 							    <use xlink:href="#icon-delate"></use>
 							</svg>
 						</i>
 					</div>
 				</form>
-				<div id="default">
+				<div class="active" id="default">
 					<div class="hotSearch">
 						<h3>热门搜索</h3>
 						<ul>
@@ -257,7 +257,23 @@
 					</div>
 				</div>
 				<div id="output">
-
+					<h3>搜索"<span id="outputSearch">卡梅隆</span>"</h3>
+					<ul>
+						<li>
+							<a href="javascript:;">
+									<div class="ranking">
+										<svg class="icon">
+												<use xlink:href="#icon-search"></use>
+											</svg>
+									</div>
+									<div class="hotMusic">
+										<div class="music-body">
+											<p><span>卡梅隆</span></p>
+										</div>
+									</div>
+								</a>
+						</li>
+					</ul>
 				</div>
 			</li>
 		</ol>

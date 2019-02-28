@@ -466,3 +466,79 @@ footer{
 	left: 0;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
+
+#output h3{
+	height: 50px;
+	margin-left: 10px;
+	padding-right: 10px;
+	font-size: 15px;
+	line-height: 50px;
+	color: #507daf;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	pointer-events: none;
+	/*transform: scale(.5);*/
+}
+
+#output .hotMusic{
+	flex: 1 1 auto;
+	margin-left: 5px;
+}
+
+#output>ul>li>a{
+	padding-left: 10px;
+	display: flex;
+}
+#output>ul>li>a>div{
+	display: flex;
+	justify-content: flex-start;
+}
+#output>ul>li .music-body{
+	width: 90%;
+	padding: 6px 0;
+}
+#output>ul>li .music-body p{
+	color: #888;
+	line-height: 40px;
+}
+#output>ul>li .music-body p span{
+	font-size: 15px;
+	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: normal;
+	color: #333;
+}
+
+#output>ul>li svg{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 20px;
+}
+
+#output>ul>li>a>div{
+	position: relative;
+}
+#output>ul>li .hotMusic:after{
+	content: "";
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+#default{
+	display: none;
+}
+#output{
+	display: none;
+}
+#default.active,#output.active{
+	display: block;
+}
+
+#closeIcon{
+	display: none;
+}

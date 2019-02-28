@@ -34,6 +34,8 @@ $(function() {
 		.siblings().removeClass('active')
 	})
 	
+	
+	
 	$('.newNav').on('tabChange',function(e,index){
 		let $li = $('.tabItems>li').eq(index)
 		if($li.attr('data-dowloaded') === 'yes'){
@@ -73,6 +75,8 @@ $(function() {
 		}
 		else if(index === 2){
 			$.get('./page3.json').then((response)=>{
+				$("#searchSong").focus()
+				console.log(1)
 //				console.log(response)
 //				$li.text(response.content)
 				$li.attr('data-dowloaded','yes')
@@ -80,10 +84,22 @@ $(function() {
 		}
 	})
 	
+	
+	$('#closeIcon').on('click',function(){
+		$('#default').addClass('active')
+		$('#output').removeClass('active')
+		$('#searchSong').val('')
+		$('.holder').text('搜索歌曲、歌手、专辑')
+		$('#closeIcon').hide()
+	})
+	
 	let timer = undefined
 	$('input#searchSong').on('input',function(e){
 		$('.holder').text('')
+		$('#closeIcon').show()
 		let $input = $(e.currentTarget)
+		$('#default').removeClass('active')
+		$('#output').addClass('active')
 		let value = $input.val().trim()
 		if(value === ''){return}
 		if(timer){
@@ -93,16 +109,18 @@ $(function() {
 			search(value).then((result)=>{
 				timer = undefined
 				if(result.length  !==0){
-					$('#output').text(result.map((r)=>r.name).join(','))
+					$('#outputSearch').text(result.map((r)=>r.name).join(','))
 				}else{
-					$('#output').text('没有结果')
+//					$('#output').text('没有结果')
 				}
 			})
 		},300)
 	})
 	
+	
+	
+	
 	function search(keyword){
-		console.log('搜索'+keyword)
 		return new Promise((resolve,reject)=>{
 			var db = [
 				{"id":"1","name":"火星情报局"},
@@ -113,14 +131,10 @@ $(function() {
 				return item.name.indexOf(keyword)>=0
 			})
 			setTimeout(function(){
-				console.log('搜到'+keyword+'的结果')
 				resolve(result)
 			},(Math.random()*200+1000))
 		})
 	}
-	
-	
-	
 	
 })
 
@@ -148,3 +162,13 @@ $(function() {
 //								</div>
 //							</div>
 //						</a>
+
+
+
+
+//搜索框中输入文字的时候
+//
+//default隐藏
+//
+//output显示
+
