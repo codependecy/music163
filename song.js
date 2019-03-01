@@ -4,15 +4,18 @@ $(function() {
 	$.get('./song.json').then(function(response) {
 		let songs = response
 		let song = songs.filter(s=>s.id == id)[0]
-		let {url,name,lyric} = song
+		let {url,name,lyric,img,bg} = song
+//		$('.song-lyric>h1')
 		
 		initPlayer.call(undefined,url)
-		initText(name,lyric)
+		initText(name,lyric,img,bg)
 	})
 	
 	
-	function initText(name,lyric){
+	function initText(name,lyric,img,bg){
 		$('.song-lyric > h1').text(name)
+		$('.cover').attr('src',img)
+		$('.page').css('background-image',"url(" + bg + ")")
 		parseLyric(lyric)
 	}
 	
@@ -58,6 +61,7 @@ $(function() {
 				let top = $whichLine.offset().top
 				let LinesTop = $('.scroll-lyric').offset().top
 				let delta = top - LinesTop - $('.lyric-body').height()/3
+				console.log(this)
 				$('.scroll-lyric').css('transform',`translateY(-${delta}px)`)
 			}
 		},300)
