@@ -43,7 +43,6 @@ $(function() {
 		}
 		if(index === 1){
 			$.get('./page2.json').then((response)=>{
-				console.log(response)
 				let items = response
 				items.forEach((i)=>{
 					let $a = $(`
@@ -91,6 +90,7 @@ $(function() {
 		$('#searchSong').val('')
 		$('.holder').text('搜索歌曲、歌手、专辑')
 		$('#closeIcon').hide()
+		$('#output>ul').text('')
 	})
 	
 	let timer = undefined
@@ -100,6 +100,7 @@ $(function() {
 		let $input = $(e.currentTarget)
 		$('#default').removeClass('active')
 		$('#output').addClass('active')
+		$('#outputSearch').text($('input#searchSong').val())
 		let value = $input.val().trim()
 		if(value === ''){return}
 		if(timer){
@@ -109,13 +110,36 @@ $(function() {
 			search(value).then((result)=>{
 				timer = undefined
 				if(result.length  !==0){
-					$('#outputSearch').text(result.map((r)=>r.name).join(','))
+					create(result.map((r)=>r.name).join(','),$('#output>ul'))
+//					$('#outputSearch').text(result.map((r)=>r.name).join(','))
 				}else{
 //					$('#output').text('没有结果')
 				}
 			})
 		},300)
 	})
+	
+	function create(val,object){
+		let $li = $(`
+			<li>
+				<a href="javascript:;">
+									<div class="ranking">
+										<svg class="icon">
+												<use xlink:href="#icon-search"></use>
+											</svg>
+									</div>
+									<div class="hotMusic">
+										<div class="music-body">
+											<p><span>${val}</span></p>
+										</div>
+									</div>
+								</a>
+								</li>
+								
+			`)
+		object.prepend($li)
+	}
+	
 	
 	
 	
