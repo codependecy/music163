@@ -1,4 +1,7 @@
 $(function() {
+	let $sTop = $(window).scrollTop()
+	console.log($(window).scrollTop())
+	$('.icon').css('top','15vh'+ $sTop)
 
 	let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
 	$.get('./song.json').then(function(response) {
@@ -61,7 +64,6 @@ $(function() {
 				let top = $whichLine.offset().top
 				let LinesTop = $('.scroll-lyric').offset().top
 				let delta = top - LinesTop - $('.lyric-body').height()/3
-				console.log(this)
 				$('.scroll-lyric').css('transform',`translateY(-${delta}px)`)
 			}
 		},300)
