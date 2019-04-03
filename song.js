@@ -93,24 +93,6 @@ $(function() {
 		})
 	}
 	
-	//从json中获取歌词
-//	$.get('lyric.json').then(function(object) {
-//		let {lyric} = object
-//		let array = lyric.split('\n')
-//		let $lyric = $('.scroll-lyric')
-//		for(var i = 0; i < array.length; i++) {
-//			let newArr = array[i].split(']')
-//			let $p = $("<p></p>")
-//			$p.text(newArr[1])
-//			$p.appendTo($lyric)
-//		}
-//	})
-	
-	
-
-	
-	
-	
 
 	//控制播放按钮显示与否
 	$('.disc-container').click(function() {
